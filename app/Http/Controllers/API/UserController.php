@@ -1,13 +1,14 @@
 <?php
+
 namespace App\Http\Controllers\API;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Validator;
+
 class UserController extends Controller
 {
-    public $successStatus = 200;
     /**
      * login api
      *
@@ -27,6 +28,7 @@ class UserController extends Controller
         $token =  Auth::user()->createToken('MyApp')-> accessToken;
         return response(['user' => auth()->user(), 'token' => $token]);
     }
+    
     /**
      * Register api
      *
