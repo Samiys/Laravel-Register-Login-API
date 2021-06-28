@@ -28,7 +28,7 @@ class UserController extends Controller
         $token =  Auth::user()->createToken('MyApp')-> accessToken;
         return response(['user' => auth()->user(), 'token' => $token]);
     }
-    
+
     /**
      * Register api
      *
